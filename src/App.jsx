@@ -1,13 +1,14 @@
 import './App.css'
-import ContadorContainer from './components/Contador/ContadorContainer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Navbar from './Entraga 1/components/Navbar/Navbar'
 
 function App() {
   
 
   return (
     <div>
-        <h1>Hola mundo</h1>
-        <ContadorContainer />
+       <Navbar/>
+       <ItemListContainer greeting = {"Bienvenido a mi ecommerce"}/>
     </div>
   )
 }
