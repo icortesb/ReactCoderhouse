@@ -1,4 +1,5 @@
 import "./NavBar.css";
+import CartWidget from "./CartWidget";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -34,17 +35,19 @@ const handleMouseOver = (event, value) => {
   const items = ["Home", "About", "Services", "Contact"];
 
   return (
-    <nav>
-      <ul>
+    <nav className="bg-slate-900 text-gray-200">
+        <h1 className="font-sans font-semibold text-xl tracking-wider text-center p-3" onMouseOver={(e) => handleMouseOver(e, "DISHAPE")}>DISHAPE</h1>
+      <ul className="flex flex-col">
         {items.map((item) => (
-          <li
+          <li className="p-3"
             key={item}
-            onMouseOver={(e) => handleMouseOver(e, item)}
+            // onMouseOver={(e) => handleMouseOver(e, item)}
           >
             {item}
           </li>
         ))}
       </ul>
+      <CartWidget/>
     </nav>
   );
 };
