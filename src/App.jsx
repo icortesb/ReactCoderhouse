@@ -1,13 +1,12 @@
 import './App.css'
-import ContadorContainer from './components/Contador/ContadorContainer'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
   
 
   return (
     <div>
-        <h1>Hola mundo</h1>
-        <ContadorContainer />
+        <NavBar/>
     </div>
   )
 }
