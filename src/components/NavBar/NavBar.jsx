@@ -44,8 +44,8 @@ const NavBar = () => {
     const items = ["Home", "About", "Services", "Contact"];
 
     return (
-        <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
-            <div className="p-2 lg:w-10">
+        <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-evenly">
+            <div className="p-2 lg:w-28 flex justify-center items-center">
                 <h1
                     className="font-sans font-semibold text-xl tracking-wider text-center p-3"
                     onMouseOver={(e) => handleMouseOver(e, "DISHAPE")}
@@ -60,7 +60,7 @@ const NavBar = () => {
                 } flex flex-col`}
             >
                 {items.map((item) => (
-                    <li className="p-3" key={item}>
+                    <li className="p-3 text-lg rounded hover:bg-slate-300 hover:text-gray-800" key={item}>
                         {item}
                     </li>
                 ))}
