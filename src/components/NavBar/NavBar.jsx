@@ -1,11 +1,23 @@
 import CartWidget from "./CartWidget";
 import HamburgerMenu from "./HamburgerMenu";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setMenuOpen(false);
+        };
+    
+        window.addEventListener("resize", handleResize);
+    
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -56,8 +68,8 @@ const NavBar = () => {
             <HamburgerMenu menuOpen={menuOpen} toggleMenu={toggleMenu} />
             <ul
                 className={`lg:flex lg:flex-row lg:items-center ${
-                    menuOpen ? "block" : "hidden"
-                } flex flex-col`}
+                    menuOpen ? "flex" : "hidden"
+                } flex-col`}
             >
                 {items.map((item) => (
                     <li className="p-3 text-lg rounded hover:bg-slate-300 hover:text-gray-800" key={item}>
