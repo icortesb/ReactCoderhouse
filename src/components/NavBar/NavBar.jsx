@@ -1,6 +1,6 @@
 import CartWidget from "./CartWidget";
 import HamburgerMenu from "./HamburgerMenu";
-import { GiPumpkinMask } from "react-icons/gi";
+import {GiPumpkinMask} from "react-icons/gi";
 import {useState, useEffect} from "react";
 
 const NavBar = () => {
@@ -26,20 +26,17 @@ const NavBar = () => {
 
     return (
         <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
-            <div className="p-2 lg:w-auto flex justify-center items-center">
-                <GiPumpkinMask
-                    color="orange"
-                    size={50}
-                 />
+            <div className="flex justify-center items-center p-2 w-auto">
+                <GiPumpkinMask color="orange" size={50} />
                 <h1 className="font-sans font-semibold text-xl tracking-wider text-center p-3 select-none">
                     MICHAEL BUYERS
                 </h1>
             </div>
             <HamburgerMenu menuOpen={menuOpen} toggleMenu={toggleMenu} />
             <ul
-                className={`lg:flex lg:flex-row lg:items-center lg:flex-grow ${
+                className={`${
                     menuOpen ? "flex" : "hidden"
-                } flex-col`}
+                } flex-col lg:flex lg:flex-row lg:items-center lg:flex-grow `}
             >
                 {items.map((item) => (
                     <li
