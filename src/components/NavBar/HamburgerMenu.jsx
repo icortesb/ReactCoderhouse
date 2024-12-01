@@ -4,7 +4,7 @@ const HamburgerMenu = ({menuOpen, toggleMenu}) => {
 
     return (
         <div
-        className="block absolute right-3 top-5 lg:hidden"
+        className="block absolute right-3 top-7 lg:hidden"
         onClick={toggleMenu}
         aria-expanded={menuOpen}
         >
