@@ -1,8 +1,22 @@
-const ItemListContainer = ({greeting}) => {
-  return (
-    <div>
-        <p className="text-cyan-800 font-semibold text-3xl py-4 px-1">{greeting}</p>
-    </div>
-  )
-}
-export default ItemListContainer
+import useProducts from "../../hooks/useProducts";
+import hocFilterProducts from "../../hoc/hocFilterProducts";
+
+const ItemListContainer = ({greeting, products}) => {
+    const {products, loading} = useProducts();
+
+    return (
+        <div>
+            <h1>{greeting}</h1>
+
+            {loading ? (
+                <Loading />
+            ) : (
+                <ItemList products={products} />
+            )}
+        </div>
+    );
+};
+
+const ItemListContainerWithHoc = hocFilterProducts(ItemListContainer)
+
+export default ItemListContainerWithHoc
