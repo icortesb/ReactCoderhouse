@@ -1,22 +1,16 @@
-import useProducts from "../../hooks/useProducts";
+import ItemList from "./ItemList";
 import hocFilterProducts from "../../hoc/hocFilterProducts";
 
-const ItemListContainer = ({greeting, products}) => {
-    const {products, loading} = useProducts();
-
+const ItemListContainer = ({greeting, products, loading}) => {
     return (
-        <div>
+        <div className="itemListContainer">
             <h1>{greeting}</h1>
-
             {loading ? (
-                <Loading />
+                <p>Loading...</p>
             ) : (
                 <ItemList products={products} />
             )}
         </div>
-    );
-};
-
-const ItemListContainerWithHoc = hocFilterProducts(ItemListContainer)
-
-export default ItemListContainerWithHoc
+    )
+}
+export default hocFilterProducts(ItemListContainer);

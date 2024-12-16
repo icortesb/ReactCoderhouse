@@ -6,9 +6,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer
-        greeting={'Bienvenidos al ecommerce!'}
-      />
+      <ItemListContainer/>
     </div>
   );
 }
