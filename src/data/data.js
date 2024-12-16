@@ -70,7 +70,6 @@ const products = [
 const getProducts = async () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(products);
             resolve(products);
             reject('No se pudo traer los productos');
         }, 2000);
