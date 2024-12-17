@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../data/data.js";
 
-const useProducts = (idCategory, id) => {
+export const useProducts = (idCategory, id) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -30,5 +30,3 @@ const useProducts = (idCategory, id) => {
 
     return { products, loading };
 };
-
-export default useProducts;

@@ -6,7 +6,7 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 10,
         price: 500,
-        category: "Remeras"
+        category: "remeras"
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 10,
         price: 500,
-        category: "Remeras"
+        category: "remeras"
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 10,
         price: 1500,
-        category: "Pantalones"
+        category: "pantalones"
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 10,
         price: 1500,
-        category: "Pantalones"
+        category: "pantalones"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 5,
         price: 2500,
-        category: "Camperas"
+        category: "camperas"
     },
     {
         id: 6,
@@ -51,25 +51,25 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 5,
         price: 2500,
-        category: "Camperas"
+        category: "camperas"
     },
     {
         id: 7,
-        name: "Zapatillas Blancas",
-        description: "Zapatillas deportivas blancas",
+        name: "zapatillas Blancas",
+        description: "zapatillas deportivas blancas",
         img: "https://via.placeholder.com/150",
         stock: 20,
         price: 3000,
-        category: "Zapatillas"
+        category: "zapatillas"
     },
     {
         id: 8,
-        name: "Zapatillas Negras",
-        description: "Zapatillas deportivas negras",
+        name: "zapatillas Negras",
+        description: "zapatillas deportivas negras",
         img: "https://via.placeholder.com/150",
         stock: 20,
         price: 3000,
-        category: "Zapatillas"
+        category: "zapatillas"
     },
     {
         id: 9,
@@ -78,7 +78,7 @@ const products = [
         img: "https://via.placeholder.com/150",
         stock: 15,
         price: 800,
-        category: "Gorras"
+        category: "gorras"
     }
 ];
 

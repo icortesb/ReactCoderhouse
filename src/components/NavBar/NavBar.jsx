@@ -23,7 +23,7 @@ const NavBar = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const items = ["Remeras", "Pantalones", "Zapatillas", "Camperas", "Gorras"];
+    const items = ["remeras", "pantalones", "zapatillas", "camperas", "gorras"];
 
     return (
         <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
@@ -42,10 +42,10 @@ const NavBar = () => {
                 {items.map((item) => (
                     <Link
                         to={`/category/${item}`}
-                        className="p-3 text-lg rounded hover:bg-slate-300 hover:text-gray-800"
+                        className="p-3 text-md rounded hover:bg-slate-300 hover:text-gray-800"
                         key={item}
                     >
-                        {item}
+                        {item.toUpperCase()}
                     </Link>
                 ))}
             </ul>

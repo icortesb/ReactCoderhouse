@@ -1,5 +1,5 @@
 import {useState} from "react";
-import useProducts from "../hooks/useProducts";
+import { useProducts } from "../../hooks/useProducts.jsx";
 
 const hocFilterProducts = (Component) => {
     function FilteredComponent(props) {
