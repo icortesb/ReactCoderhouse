@@ -1,11 +1,13 @@
 const ItemDetail = ({ product }) => {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg p-4">
-        <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-        <img src={product.img} alt={product.name} className="w-full h-auto mb-4" />
-        <p className="text-gray-700 text-base mb-4">{product.description}</p>
-        <p className="text-xl font-semibold mb-4">${product.price}</p>
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      <div className="w-full max-w-4xl rounded overflow-hidden shadow-lg">
+        <img src={product.img} alt={product.name} className="w-full h-96 object-cover mb-4" />
+        <div className="p-4">
+          <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+          <p className="text-gray-700 text-lg mb-4">{product.description}</p>
+          <p className="text-2xl font-semibold mb-4">${product.price}</p>
+        </div>
       </div>
     </div>
   )

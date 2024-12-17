@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../data/data.js";
 
-export const useProducts = (idCategory, id) => {
+export const useProducts = ({ idCategory, id }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -12,13 +12,11 @@ export const useProducts = (idCategory, id) => {
             .then((data) => {
                 if (idCategory) {
                     setProducts(data.filter(product => product.category === idCategory));
-                } else if (id){
+                } else if (id) {
                     setProducts(data.find(product => product.id === parseInt(id)));
-                }
-                else {
+                } else {
                     setProducts(data);
                 }
-
             })
             .catch((err) => {
                 console.error(err);

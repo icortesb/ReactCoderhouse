@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
-    const { products, loading } = useProducts(null, id);
+    const { products, loading } = useProducts({ id });
 
     if (loading) {
         return <p>Loading...</p>;
@@ -14,4 +14,4 @@ const ItemDetailContainer = () => {
     )
     
 }
-export default ItemDetailContainer
+export default ItemDetailContainer;

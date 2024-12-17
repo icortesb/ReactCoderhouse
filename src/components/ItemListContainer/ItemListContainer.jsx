@@ -4,7 +4,7 @@ import { useProducts } from "../../hooks/useProducts.jsx";
 
 const ItemListContainer = ({ greeting }) => {
     const { idCategory } = useParams();
-    const { products, loading } = useProducts(idCategory);
+    const { products, loading } = useProducts({ idCategory });
 
     return (
         <div>
