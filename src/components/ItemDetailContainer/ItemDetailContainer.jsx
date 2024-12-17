@@ -1,22 +1,16 @@
-import { useState, useEffect } from "react"
-import { getProducts } from "../../data/data.js"
 import ItemDetail from "./ItemDetail"
+import useProducts from "../../hooks/useProducts.jsx"
+import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = () => {
-    
-    const [product, setProduct] = useState({})
+    const { id } = useParams();
+    const { products, loading } = useProducts(null, id);
 
-    useEffect(() => {
-      getProducts()
-        .then((data) => {
-            const productFind = data.find((dataProduct) => dataProduct.id === 1)
-            setProduct(productFind)
-        })
-
-    }, [])
-
+    if (loading) {
+        return <p>Loading...</p>;
+    }
     return (
-        <ItemDetail product={product} />
+        <ItemDetail product={products} />
     )
     
 }

@@ -2,7 +2,7 @@ import {useState} from "react";
 import useProducts from "../hooks/useProducts";
 
 const hocFilterProducts = (Component) => {
-    function FilteredComponent() {
+    function FilteredComponent(props) {
         const {products, loading} = useProducts();
         const [query, setQuery] = useState("");
 
@@ -27,7 +27,7 @@ const hocFilterProducts = (Component) => {
                         onChange={changeInput}
                     />
                 </div>
-                <Component products={search()} loading={loading} />
+                <Component {...props} products={search()} loading={loading} />
             </>
         );
     }

@@ -1,9 +1,15 @@
-import ItemList from "./ItemList";
-import hocFilterProducts from "../../hoc/hocFilterProducts";
+import { useState, useEffect } from "react";
+import { getProducts } from "../../data/data.js";
+import ItemList from "./ItemList.jsx";
+import { useParams } from "react-router-dom";
+import useProducts from "../../hooks/useProducts";
 
-const ItemListContainer = ({greeting, products, loading}) => {
+const ItemListContainer = ({ greeting }) => {
+    const { idCategory } = useParams();
+    const { products, loading } = useProducts(idCategory);
+
     return (
-        <div className="itemListContainer">
+        <div>
             <h1>{greeting}</h1>
             {loading ? (
                 <p>Loading...</p>
@@ -11,6 +17,7 @@ const ItemListContainer = ({greeting, products, loading}) => {
                 <ItemList products={products} />
             )}
         </div>
-    )
-}
-export default hocFilterProducts(ItemListContainer);
+    );
+};
+
+export default ItemListContainer;
