@@ -14,6 +14,7 @@ const Item = ({ product }) => {
             onMouseLeave={() => {
                 setIsHovered(false);
             }}
+            title={product.name}
         >
             <img 
                 src={isHovered ? product.imgDetail : product.imgPreview} 

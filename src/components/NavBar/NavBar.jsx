@@ -28,12 +28,12 @@ const NavBar = () => {
 
     return (
         <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
-            <Link to={`/`} className="flex justify-center items-center p-2 w-auto">
+            <NavLink to={`/`} className="flex justify-center items-center p-2 w-auto">
                 <GiPumpkinMask color="orange" size={50} />
                 <h1 className="font-sans font-semibold text-xl tracking-wider text-center p-3 select-none">
                     MICHAEL BUYERS
                 </h1>
-            </Link>
+            </NavLink>
             <HamburgerMenu menuOpen={menuOpen} toggleMenu={toggleMenu} />
             <ul
                 className={`${
@@ -41,13 +41,17 @@ const NavBar = () => {
                 } flex-col lg:flex lg:flex-row lg:items-center lg:flex-grow `}
             >
                 {categories.map((category) => (
-                    <Link
+                    <NavLink
                         to={`/category/${category}`}
-                        className="p-3 text-md rounded hover:bg-slate-300 hover:text-gray-800"
+                        className={({ isActive }) =>
+                            `p-3 text-md rounded hover:bg-slate-300 hover:text-gray-800 ${
+                                isActive ? "bg-slate-300 text-gray-800" : ""
+                            }`
+                        }
                         key={category}
                     >
                         {category.toUpperCase()}
-                    </Link>
+                    </NavLink>
                 ))}
             </ul>
             <CartWidget menuOpen={menuOpen} />
