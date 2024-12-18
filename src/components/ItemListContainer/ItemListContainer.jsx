@@ -1,6 +1,7 @@
 import ItemList from "./ItemList.jsx";
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../hooks/useProducts.jsx";
+import Spinner from "../Spinner/Spinner";
 
 const ItemListContainer = ({ greeting }) => {
     const { idCategory } = useParams();
@@ -10,7 +11,7 @@ const ItemListContainer = ({ greeting }) => {
         <div>
             <h1>{greeting}</h1>
             {loading ? (
-                <p>Loading...</p>
+                <Spinner />
             ) : (
                 <ItemList products={products} />
             )}
