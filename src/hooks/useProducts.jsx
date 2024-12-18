@@ -19,7 +19,7 @@ export const useProducts = ({ idCategory, id }) => {
                 }
             })
             .catch((err) => {
-                console.error(err);
+                console.error("Error fetching products:", err);
             })
             .finally(() => {
                 setLoading(false);
