@@ -3,9 +3,12 @@ import HamburgerMenu from "./HamburgerMenu";
 import {GiPumpkinMask} from "react-icons/gi";
 import {useState, useEffect} from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useProducts } from "../../hooks/useProducts.jsx";
 
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { products } = useProducts({});
+    const categories = [...new Set(products.map(product => product.category))];
 
     useEffect(() => {
         const handleResize = () => {
@@ -23,8 +26,6 @@ const NavBar = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const items = ["remeras", "pantalones", "zapatillas", "camperas", "gorras"];
-
     return (
         <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
             <Link to={`/`} className="flex justify-center items-center p-2 w-auto">
@@ -39,13 +40,13 @@ const NavBar = () => {
                     menuOpen ? "flex" : "hidden"
                 } flex-col lg:flex lg:flex-row lg:items-center lg:flex-grow `}
             >
-                {items.map((item) => (
+                {categories.map((category) => (
                     <Link
-                        to={`/category/${item}`}
+                        to={`/category/${category}`}
                         className="p-3 text-md rounded hover:bg-slate-300 hover:text-gray-800"
-                        key={item}
+                        key={category}
                     >
-                        {item.toUpperCase()}
+                        {category.toUpperCase()}
                     </Link>
                 ))}
             </ul>

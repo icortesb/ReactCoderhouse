@@ -13,7 +13,7 @@ export const useProducts = ({ idCategory, id }) => {
                 if (idCategory) {
                     setProducts(data.filter(product => product.category === idCategory));
                 } else if (id) {
-                    setProducts(data.find(product => product.id === parseInt(id)));
+                    setProducts(data.find(product => product.id === id));
                 } else {
                     setProducts(data);
                 }
