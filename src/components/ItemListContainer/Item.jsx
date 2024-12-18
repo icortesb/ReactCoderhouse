@@ -18,8 +18,7 @@ const Item = ({ product }) => {
             <img 
                 src={isHovered ? product.imgDetail : product.imgPreview} 
                 alt={product.name} 
-                className="w-full h-56 object-cover rounded-t-lg" 
-                style={{ width: '200px', height: '200px' }}
+                className="w-48 h-48 object-cover rounded-t-lg"
             />
             <div className="p-2 flex-grow">
                 <h2 className="text-xl mb-2 truncate">{product.name}</h2>
