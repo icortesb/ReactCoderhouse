@@ -3,7 +3,11 @@ import ItemCountContainer from "../ItemCount/ItemCountContainer";
 const ItemDetail = ({ product }) => {
 
     const addProductToCart = (quantity) => {
-        console.log(`Agregando ${quantity} productos al carrito`);
+        const productCart = {
+            ...product,
+            quantity,
+        };
+        console.log(productCart);
     };
 
     return (
