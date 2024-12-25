@@ -18,10 +18,14 @@ const CartProvider = ({children}) => {
             }
         });
     }
+
+    const removeProduct = (productId) => {
+        setCart((prevCart) => prevCart.filter(item => item.id !== productId));
+    }
     
     console.log(cart);
     return (
-        <CartContext.Provider value={{cart, addProduct}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{cart, addProduct, removeProduct}}>{children}</CartContext.Provider>
     );
 };
 
