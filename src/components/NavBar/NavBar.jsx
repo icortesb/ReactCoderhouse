@@ -28,12 +28,12 @@ const NavBar = () => {
 
     return (
         <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
-            <NavLink to={`/`} className="flex justify-center items-center p-2 w-auto">
+            <Link to={`/`} className="flex justify-center items-center p-2 w-auto">
                 <GiPumpkinMask color="orange" size={50} />
                 <h1 className="font-sans font-semibold text-xl tracking-wider text-center p-3 select-none">
                     MICHAEL BUYERS
                 </h1>
-            </NavLink>
+            </Link>
             <HamburgerMenu menuOpen={menuOpen} toggleMenu={toggleMenu} />
             <ul
                 className={`${
