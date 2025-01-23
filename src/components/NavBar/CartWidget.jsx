@@ -5,9 +5,8 @@ import {CartContext} from "../../context/CartContext";
 import {useContext} from "react";
 
 const CartWidget = ({menuOpen}) => {
-  const {cart} = useContext(CartContext);
+  const { totalItems } = useContext(CartContext);
 
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <Link

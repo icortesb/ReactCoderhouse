@@ -6,8 +6,6 @@ const Item = React.memo(
   ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
 
-    console.log(`Renderizando ${product.name}.`);
-
     return (
       <Link
         to={`/detail/${product.id}`}
