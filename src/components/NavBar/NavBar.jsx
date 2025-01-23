@@ -27,10 +27,10 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="bg-slate-900 text-gray-200 h-auto p-4 lg:flex lg:justify-between">
-            <Link to={`/`} className="flex justify-center items-center p-2 w-auto">
+        <nav className="h-auto p-4 text-gray-200 bg-slate-900 lg:flex lg:justify-between">
+            <Link to={`/`} className="flex items-center justify-center w-auto p-2">
                 <GiPumpkinMask color="orange" size={50} />
-                <h1 className="font-sans font-semibold text-xl tracking-wider text-center p-3 select-none">
+                <h1 className="p-3 font-sans text-xl font-semibold tracking-wider text-center select-none">
                     MICHAEL BUYERS
                 </h1>
             </Link>
