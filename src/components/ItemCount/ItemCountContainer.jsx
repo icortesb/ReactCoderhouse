@@ -17,6 +17,12 @@ const ItemCountContainer = ({ stock, addProductToCart }) => {
         setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
     };
 
+
+    //Evita que se acumule count si no se cambia el valor antes de agregar nuevamente el mismo producto
+    const resetCount = () => {
+        setCount(0);
+    };
+
     return (
         <ItemCount
             count={count}
@@ -24,6 +30,7 @@ const ItemCountContainer = ({ stock, addProductToCart }) => {
             handleClickRemove={handleClickRemove}
             isDisabled={isDisabled}
             addProductToCart={addProductToCart}
+            resetCount={resetCount}
         />
     );
 };

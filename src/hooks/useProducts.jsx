@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../data/data.js";
+// import { getProducts } from "../data/data.js";
+import { getProducts } from "../data/getProducts.js";
 
 export const useProducts = ({ idCategory, id }) => {
     const [products, setProducts] = useState([]);

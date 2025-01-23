@@ -82,13 +82,16 @@ const products = [
     }
 ];
 
-const getProducts = async () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products);
-            reject("No se pudo traer los productos");
-        }, Math.random() * 1000);
-    });
-};
+// const getProducts = async () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(products);
+//             reject("No se pudo traer los productos");
+//         }, Math.random() * 1000);
+//     });
+// };
+ 
+
+
 
 export { getProducts };
