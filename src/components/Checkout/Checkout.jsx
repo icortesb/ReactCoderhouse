@@ -3,6 +3,8 @@ import FormCheckout from "./FormCheckout"
 import { CartContext } from "../../context/CartContext"
 import { Timestamp, collection, addDoc } from "firebase/firestore"
 import db from "../../db/db.js"
+import validateForm from "../../utils/validateForm.js"
+import ErrorToast from "../ErrorToast/ErrorToast.jsx"
 
 const Checkout = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const Checkout = () => {
     })
 
     const [orderId, setOrderId] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null)
     const { cart, totalPrice, clearCart } = useContext(CartContext)
 
     console.log(`formData`, formData)
@@ -33,10 +36,17 @@ const Checkout = () => {
         }
         console.log(`orden`, orden)
 
-        await uploadOrder(orden)
+        const { isValid, message } = await validateForm(formData)
+
+        if (isValid) {
+            await createOrder(orden)
+        } else {
+            setErrorMessage(message)
+            setTimeout(() => setErrorMessage(null), 3000)
+        }
     }
 
-    const uploadOrder = async (orden) => {
+    const createOrder = async (orden) => {
         try {
             const orderRef = collection(db, 'orders')
             const res = await addDoc(orderRef, orden)
@@ -47,7 +57,6 @@ const Checkout = () => {
         }
     }
 
-
     return (
       <div>
         {orderId ? (
@@ -56,11 +65,14 @@ const Checkout = () => {
             <p>Tu número de orden es: {orderId}</p>
           </div>
         ) : (
-          <FormCheckout
-            formData={formData}
-            handleChangeInput={handleChangeInput}
-            handleSubmit={handleSubmit}
-          />
+          <>
+            {errorMessage && <ErrorToast message={errorMessage} />}
+            <FormCheckout
+              formData={formData}
+              handleChangeInput={handleChangeInput}
+              handleSubmit={handleSubmit}
+            />
+          </>
         )}
       </div>
     );

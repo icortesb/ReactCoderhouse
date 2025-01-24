@@ -4,7 +4,7 @@ const ItemCount = ({
     handleClickRemove,
     isDisabled,
     addProductToCart,
-    resetCount, // new prop
+    resetCount
 }) => {
     return (
         <div className="flex flex-col items-center">
